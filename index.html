@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>¿Quieres ser mi San Valentín?</title>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #ff758c, #ff7eb3);
+        font-family: Arial, sans-serif;
+        text-align: center;
+        color: white;
+    }
+
+    .container {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 40px;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    button {
+        padding: 12px 25px;
+        margin: 15px;
+        border: none;
+        border-radius: 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    #yes {
+        background-color: #ffffff;
+        color: #ff4f81;
+    }
+
+    #yes:hover {
+        transform: scale(1.1);
+    }
+
+    #no {
+        background-color: #ff4f81;
+        color: white;
+        position: relative;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Maholy ❤️</h1>
+    <p>¿Quieres ser mi San Valentín?</p>
+    <button id="yes" onclick="aceptar()">Sí 💖</button>
+    <button id="no" onmouseover="mover()">No 😢</button>
+</div>
+
+<script>
+function aceptar() {
+    document.body.innerHTML = `
+    <div style="text-align:center; color:white; font-family:Arial;">
+        <h1>Sabía que dirías que sí ❤️</h1>
+        <p>Prepárate para el mejor 14 de febrero de tu vida.</p>
+        <p>Con amor, tu programador favorito 💻✨</p>
+    </div>`;
+}
+
+function mover() {
+    const boton = document.getElementById("no");
+    boton.style.position = "absolute";
+    boton.style.left = Math.random() * window.innerWidth + "px";
+    boton.style.top = Math.random() * window.innerHeight + "px";
+}
+</script>
+
+</body>
+</html>
